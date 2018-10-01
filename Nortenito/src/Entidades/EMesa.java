@@ -1,13 +1,13 @@
-package clases;
+package Entidades;
 
-public class CMesa {
+public class EMesa {
     private int idMesa;
     private int idCliente;
     private boolean disponible;
 
-    public CMesa() { }
+    public EMesa() { }
 
-    public CMesa(int idMesa, int idCliente, boolean disponible) {
+    public EMesa(int idMesa, int idCliente, boolean disponible) {
         this.idMesa = idMesa;
         this.idCliente = idCliente;
         this.disponible = disponible;

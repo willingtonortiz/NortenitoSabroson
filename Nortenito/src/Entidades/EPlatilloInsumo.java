@@ -1,6 +1,6 @@
-package clases;
+package Entidades;
 
-public class CPlatilloInsumo {
+public class EPlatilloInsumo {
     private int idPlatillo;
     private int idInsumo;
 

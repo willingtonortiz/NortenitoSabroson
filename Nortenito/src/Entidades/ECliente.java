@@ -1,12 +1,12 @@
-package clases;
+package Entidades;
 
-public class CCliente {
+public class ECliente {
     private int idCliente;
     private String nombre;
 
-    public CCliente() {}
+    public ECliente() {}
 
-    public CCliente(int idCliente, String nombre) {
+    public ECliente(int idCliente, String nombre) {
         this.idCliente = idCliente;
         this.nombre = nombre;
     }

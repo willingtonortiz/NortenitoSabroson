@@ -1,12 +1,12 @@
-package clases;
+package Entidades;
 
-public class CMesero {
+public class EMesero {
     private int idMesero;
     private String nombre;
 
-    public CMesero() { }
+    public EMesero() { }
 
-    public CMesero(int idMesero, String nombre) {
+    public EMesero(int idMesero, String nombre) {
         this.idMesero = idMesero;
         this.nombre = nombre;
     }

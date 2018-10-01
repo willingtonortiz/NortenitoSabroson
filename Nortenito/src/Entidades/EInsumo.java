@@ -1,14 +1,14 @@
-package clases;
+package Entidades;
 
-public class CInsumo {
+public class EInsumo {
     private int idInsumo;
     private String nombre;
     private int cantidad;   
     private double precio;
     
-    public CInsumo(){ }
+    public EInsumo(){ }
     
-    public CInsumo(int idInsumo, String nombre, int cantidad, double precio) {
+    public EInsumo(int idInsumo, String nombre, int cantidad, double precio) {
         this.idInsumo = idInsumo;
         this.nombre = nombre;
         this.cantidad = cantidad;

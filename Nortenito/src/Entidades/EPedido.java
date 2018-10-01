@@ -1,13 +1,13 @@
-package clases;
+package Entidades;
 
-public class CPedido {
+public class EPedido {
     private int idPedido;
     private String descripcion;
     private int idCliente;
 
-    public CPedido() { }
+    public EPedido() { }
 
-    public CPedido(int idPedido, String descripcion, int idCliente) {
+    public EPedido(int idPedido, String descripcion, int idCliente) {
         this.idPedido = idPedido;
         this.descripcion = descripcion;
         this.idCliente = idCliente;

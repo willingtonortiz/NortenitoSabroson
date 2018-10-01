@@ -1,8 +1,8 @@
-package clases;
+package Entidades;
 
 import java.util.Date;
 
-public class CComprobantePago {
+public class EComprobantePago {
     private int idComprobantePago;
     private String descripcion;
     private double monto;
@@ -10,9 +10,9 @@ public class CComprobantePago {
     private int idMesa;
     private Date fecha;
 
-    public CComprobantePago() { }
+    public EComprobantePago() { }
 
-    public CComprobantePago(int idComprobantePago, String descripcion, double monto, int idMesero, int idMesa, Date fecha) {
+    public EComprobantePago(int idComprobantePago, String descripcion, double monto, int idMesero, int idMesa, Date fecha) {
         this.idComprobantePago = idComprobantePago;
         this.descripcion = descripcion;
         this.monto = monto;
