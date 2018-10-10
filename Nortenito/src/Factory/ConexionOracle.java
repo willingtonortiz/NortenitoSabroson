@@ -1,6 +1,7 @@
 package Factory;
 
 import Interfaces.IConexion;
+import java.sql.Connection;
 
 public class ConexionOracle implements IConexion {
     private String host;
@@ -16,12 +17,13 @@ public class ConexionOracle implements IConexion {
     }
 
     @Override
-    public void conectar() {
-        System.out.println("Se conectó a Oracle");
+    public Connection conectar() {
+        return null;
     }
 
     @Override
     public void desconectar() {
-        System.out.println("Se desconectó de Oracle");
-    }    
+        
+    }
+
 }

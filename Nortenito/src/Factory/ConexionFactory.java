@@ -1,9 +1,10 @@
 package Factory;
 
 import Interfaces.IConexion;
+import java.sql.SQLException;
 
 public class ConexionFactory {
-    public IConexion getConexion(String nombre){
+    public IConexion getConexion(String nombre) throws SQLException, ClassNotFoundException{
         if(nombre == null){
             return new ConexionVacia();
         }

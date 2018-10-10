@@ -1,6 +1,8 @@
 package Interfaces;
 
+import java.sql.Connection;
+
 public interface IConexion {
-    void conectar();
-    void desconectar();
+    public Connection conectar();
+    public void desconectar();
 }

@@ -1,6 +1,7 @@
 package Factory;
 
 import Interfaces.IConexion;
+import java.sql.Connection;
 
 public class ConexionSqlServer implements IConexion{
     private String host;
@@ -10,18 +11,20 @@ public class ConexionSqlServer implements IConexion{
 
     public ConexionSqlServer() {
         this.host = "";
-        this.puerto = "";
-        this.usuario = "";
-        this.contrasenia = "";
+        this.puerto = "jdbc:sqlserver://localhost/pruebas";
+        this.usuario = "usuario";
+        this.contrasenia = "321";        
     }
 
     @Override
-    public void conectar() {
-        System.out.println("Se conectó a SqlServer");
+    public Connection conectar() {
+        return null;
     }
 
     @Override
     public void desconectar() {
-        System.out.println("Se desconectó de SqlServer");
-    }    
+        
+    }
+
+
 }

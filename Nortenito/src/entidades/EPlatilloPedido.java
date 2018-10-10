@@ -1,4 +1,4 @@
-package Entidades;
+package entidades;
 
 public class EPlatilloPedido {
     private int idPlatillo;

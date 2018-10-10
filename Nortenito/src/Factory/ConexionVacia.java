@@ -1,18 +1,19 @@
 package Factory;
 
 import Interfaces.IConexion;
+import java.sql.Connection;
 
 public class ConexionVacia implements IConexion{
 
     public ConexionVacia() { }
 
     @Override
-    public void conectar() {
-        System.out.println("No se especificó proveedor");
+    public Connection conectar() {
+        return null;
     }
-
+    
     @Override
     public void desconectar() {
-        System.out.println("No se especificó proveedor");
-    }    
+        
+    }   
 }

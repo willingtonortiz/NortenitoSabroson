@@ -1,6 +1,7 @@
 package Factory;
 
 import Interfaces.IConexion;
+import java.sql.Connection;
 
 public class ConexionPostgreSql implements IConexion {
     private String host;
@@ -16,12 +17,12 @@ public class ConexionPostgreSql implements IConexion {
     }
 
     @Override
-    public void conectar() {
-        System.out.println("Se conectó a PostgreSql");
+    public Connection conectar() {
+        return null;
     }
 
     @Override
     public void desconectar() {
-        System.out.println("Se desconectó de PostgreSql");
-    }    
+    }
+
 }
