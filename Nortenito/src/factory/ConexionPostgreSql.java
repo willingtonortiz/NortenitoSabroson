@@ -1,6 +1,6 @@
-package Factory;
+package factory;
 
-import Interfaces.IConexion;
+import interfaces.IConexion;
 import java.sql.Connection;
 
 public class ConexionPostgreSql implements IConexion {

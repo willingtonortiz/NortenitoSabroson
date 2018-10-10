@@ -1,12 +1,12 @@
 package entidades;
 
-public class EMesero {
+public class Mesero {
     private int idMesero;
     private String nombre;
 
-    public EMesero() { }
+    public Mesero() { }
 
-    public EMesero(int idMesero, String nombre) {
+    public Mesero(int idMesero, String nombre) {
         this.idMesero = idMesero;
         this.nombre = nombre;
     }

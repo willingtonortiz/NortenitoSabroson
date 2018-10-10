@@ -1,23 +1,22 @@
-package Factory;
+package factory;
 
-import Interfaces.IConexion;
-import java.sql.SQLException;
+import interfaces.IConexion;
 
 public class ConexionFactory {
-    public IConexion getConexion(String nombre) throws SQLException, ClassNotFoundException{
+    public IConexion getConexion(String nombre){
         if(nombre == null){
             return new ConexionVacia();
         }
-        else if(nombre.equalsIgnoreCase("SqlServer")){
+        else if(nombre.equalsIgnoreCase("SQLSERVER")){
             return new ConexionSqlServer();
         }
-        else if(nombre.equalsIgnoreCase("MySql")){
+        else if(nombre.equalsIgnoreCase("MYSQL")){
             return new ConexionMySql();
         }
-        else if(nombre.equalsIgnoreCase("Oracle")){
+        else if(nombre.equalsIgnoreCase("ORACLE")){
             return new ConexionOracle();
         }
-        else if(nombre.equalsIgnoreCase("Postgre")){
+        else if(nombre.equalsIgnoreCase("POSTGRE")){
             return new ConexionPostgreSql();
         }
         else{

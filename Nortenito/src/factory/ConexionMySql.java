@@ -1,17 +1,15 @@
-package Factory;
+package factory;
 
-import Interfaces.IConexion;
+import interfaces.IConexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ConexionMySql implements IConexion{
-    private String host;
-    private String puerto;
-    private String usuario;
-    private String contrasenia;
+    private final String host;
+    private final String puerto;
+    private final String usuario;
+    private final String contrasenia;
 
     public ConexionMySql() {
         this.host = "localhost";
@@ -27,17 +25,14 @@ public class ConexionMySql implements IConexion{
             Connection conexion = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.puerto + "/prueba?useLegacyDatetimeCode=false&serverTimezone=UTC", this.usuario, this.contrasenia);
             return conexion;
         }
-        catch (SQLException ex) {
-            Logger.getLogger(ConexionMySql.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConexionMySql.class.getName()).log(Level.SEVERE, null, ex);
+        catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
         }
         return null;
     }
 
     @Override
     public void desconectar() {
-        System.out.println("Se desconectó de MySql");
+        
     }    
 }

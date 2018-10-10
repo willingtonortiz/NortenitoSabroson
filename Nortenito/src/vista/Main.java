@@ -1,20 +1,23 @@
 package vista;
 
-import Factory.ConexionFactory;
-import Interfaces.IConexion;
-import java.sql.Connection;
-import java.sql.SQLException;
+import dao.PlatilloDAO;
+import dao.PlatilloDAOImplements;
+import entidades.Platillo;
+import java.util.List;
 
 
 public class Main {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        ConexionFactory fabrica = new ConexionFactory();
+    public static void main(String[] args) {
+        PlatilloDAO platillo = new PlatilloDAOImplements("mysql");
         
-        IConexion conecSqlServer = fabrica.getConexion("mysql");
+        List<Platillo> items =  platillo.ListAll();
         
-        Connection con =  conecSqlServer.conectar();
+        System.out.println("Mostrando platillos");
         
+        items.forEach(item -> {
+            System.out.println(item);
+        });
         
     }    
 }

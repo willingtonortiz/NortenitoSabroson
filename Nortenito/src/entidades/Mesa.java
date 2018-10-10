@@ -1,13 +1,13 @@
 package entidades;
 
-public class EMesa {
+public class Mesa {
     private int idMesa;
     private int idCliente;
     private boolean disponible;
 
-    public EMesa() { }
+    public Mesa() { }
 
-    public EMesa(int idMesa, int idCliente, boolean disponible) {
+    public Mesa(int idMesa, int idCliente, boolean disponible) {
         this.idMesa = idMesa;
         this.idCliente = idCliente;
         this.disponible = disponible;

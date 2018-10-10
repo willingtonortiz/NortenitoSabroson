@@ -1,12 +1,12 @@
 package entidades;
 
-public class EPlatilloPedido {
+public class PlatilloPedido {
     private int idPlatillo;
     private int idPedido;
 
-    public EPlatilloPedido() {}
+    public PlatilloPedido() {}
     
-    public EPlatilloPedido(int idPlatillo, int idPedido) {
+    public PlatilloPedido(int idPlatillo, int idPedido) {
         this.idPlatillo = idPlatillo;
         this.idPedido = idPedido;
     }

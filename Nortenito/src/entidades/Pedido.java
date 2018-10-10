@@ -1,13 +1,13 @@
 package entidades;
 
-public class EPedido {
+public class Pedido {
     private int idPedido;
     private String descripcion;
     private int idCliente;
 
-    public EPedido() { }
+    public Pedido() { }
 
-    public EPedido(int idPedido, String descripcion, int idCliente) {
+    public Pedido(int idPedido, String descripcion, int idCliente) {
         this.idPedido = idPedido;
         this.descripcion = descripcion;
         this.idCliente = idCliente;

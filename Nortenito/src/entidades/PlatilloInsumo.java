@@ -1,6 +1,6 @@
 package entidades;
 
-public class EPlatilloInsumo {
+public class PlatilloInsumo {
     private int idPlatillo;
     private int idInsumo;
 

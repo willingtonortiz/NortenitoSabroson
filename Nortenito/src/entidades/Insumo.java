@@ -1,14 +1,14 @@
 package entidades;
 
-public class EInsumo {
+public class Insumo {
     private int idInsumo;
     private String nombre;
     private int cantidad;   
     private double precio;
     
-    public EInsumo(){ }
+    public Insumo(){ }
     
-    public EInsumo(int idInsumo, String nombre, int cantidad, double precio) {
+    public Insumo(int idInsumo, String nombre, int cantidad, double precio) {
         this.idInsumo = idInsumo;
         this.nombre = nombre;
         this.cantidad = cantidad;

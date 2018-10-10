@@ -2,7 +2,7 @@ package entidades;
 
 import java.util.Date;
 
-public class EComprobantePago {
+public class ComprobantePago {
     private int idComprobantePago;
     private String descripcion;
     private double monto;
@@ -10,9 +10,9 @@ public class EComprobantePago {
     private int idMesa;
     private Date fecha;
 
-    public EComprobantePago() { }
+    public ComprobantePago() { }
 
-    public EComprobantePago(int idComprobantePago, String descripcion, double monto, int idMesero, int idMesa, Date fecha) {
+    public ComprobantePago(int idComprobantePago, String descripcion, double monto, int idMesero, int idMesa, Date fecha) {
         this.idComprobantePago = idComprobantePago;
         this.descripcion = descripcion;
         this.monto = monto;
