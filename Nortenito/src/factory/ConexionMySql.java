@@ -22,7 +22,7 @@ public class ConexionMySql implements IConexion{
     public Connection conectar() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.puerto + "/prueba?useLegacyDatetimeCode=false&serverTimezone=UTC", this.usuario, this.contrasenia);
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.puerto + "/nortenito?useLegacyDatetimeCode=false&serverTimezone=UTC", this.usuario, this.contrasenia);
             return conexion;
         }
         catch (SQLException | ClassNotFoundException ex) {

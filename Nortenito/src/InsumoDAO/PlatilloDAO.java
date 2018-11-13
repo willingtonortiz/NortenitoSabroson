@@ -1,11 +1,11 @@
-package dao;
+package InsumoDAO;
 
-import entidades.Platillo;
+import entidades.EPlatillo;
 import java.util.List;
 
 public interface PlatilloDAO {
-    public List<Platillo> ListAll();
-    public Platillo getId(int id);
+    public List<EPlatillo> ListAll();
+    public EPlatillo getId(int id);
     public void Update();
     public void Insert();
     public void Delete();

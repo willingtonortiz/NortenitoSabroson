@@ -1,8 +1,8 @@
-package dao;
+package InsumoDAO;
 
 import factory.ConexionFactory;
 import interfaces.IConexion;
-import entidades.Platillo;
+import entidades.EPlatillo;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,27 +22,26 @@ public class PlatilloDAOImplements implements PlatilloDAO{
     }
     
     @Override
-    public List<Platillo> ListAll() {
-        
+    public List<EPlatillo> ListAll() {
         
         if(this.base.equalsIgnoreCase("MYSQL")){
             Connection conexion = this.conexion.conectar();
             
             try {
-                String query = "SELECT * FROM platillo";
+                String query = "SELECT * FROM platillos";
                 Statement sentencia = conexion.createStatement();
                 ResultSet resultado = sentencia.executeQuery(query);
                 
                 // Creación de la lista de platillos
-                List<Platillo> platillos = new ArrayList<Platillo>();
+                List<EPlatillo> platillos = new ArrayList<EPlatillo>();
                 
-                // Asisnando cada platillo
+                // Asignando cada platillo
                 while(resultado.next()){
-                    int id = resultado.getInt("idplatillo");
+                    int id = resultado.getInt("idPlatillo");
                     String nombre = resultado.getString("nombre");
-                    int precio = resultado.getInt("precio");
+                    float precio = resultado.getFloat("precio");
                     
-                    Platillo item = new Platillo(id, precio, nombre);
+                    EPlatillo item = new EPlatillo(id, nombre, precio);
                     
                     platillos.add(item);
                 }
@@ -65,7 +64,7 @@ public class PlatilloDAOImplements implements PlatilloDAO{
     }
 
     @Override
-    public Platillo getId(int id) {
+    public EPlatillo getId(int id) {
         System.out.println("Id encontrado: " + id);
         return null;
     }
