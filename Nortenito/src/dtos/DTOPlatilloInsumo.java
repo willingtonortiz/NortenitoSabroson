@@ -1,12 +1,12 @@
-package entities;
+package dtos;
 
-public class EPlatilloInsumo {
+public class DTOPlatilloInsumo {
     private int idPlatillo;
     private int idInsumo;
 
-    public EPlatilloInsumo() {}
+    public DTOPlatilloInsumo() {}
 
-    public EPlatilloInsumo(int idPlatillo, int idInsumo) {
+    public DTOPlatilloInsumo(int idPlatillo, int idInsumo) {
         this.idPlatillo = idPlatillo;
         this.idInsumo = idInsumo;
     }

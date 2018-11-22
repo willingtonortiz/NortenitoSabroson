@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.EMesa;
+import dtos.DTOMesa;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface MesaDAO {
-    public List<EMesa> read();
-    public EMesa read(int id);
-    public void insert(EMesa item);
-    public void update(EMesa item);
-    public void delete(EMesa item);
+    public List<DTOMesa> read();
+    public DTOMesa read(int id);
+    public void insert(DTOMesa item);
+    public void update(DTOMesa item);
+    public void delete(DTOMesa item);
 }

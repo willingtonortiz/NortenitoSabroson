@@ -6,6 +6,12 @@
 package factories;
 
 import daos.ClienteDAO;
+import daos.InsumoDAO;
+import daos.MesaDAO;
+import daos.MeseroDAO;
+import daos.PedidoDAO;
+import daos.PlatilloDAO;
+import daos.ProveedorDAO;
 
 /**
  *
@@ -37,4 +43,10 @@ public abstract class DAOFactory {
     }
     
     public abstract ClienteDAO getClienteDAO();
+    public abstract InsumoDAO getInsumoDAO();
+    public abstract MesaDAO getMesaDAO();
+    public abstract MeseroDAO getMeseroDAO();
+    public abstract PedidoDAO getPedidoDAO();
+    public abstract PlatilloDAO getPlatilloDAO();
+    public abstract ProveedorDAO getProveedorDAO();
 }

@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.EPedido;
+import dtos.DTOPedido;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface PedidoDAO {
-    public List<EPedido> read();
-    public EPedido read(int id);
-    public void insert(EPedido item);
-    public void update(EPedido item);
-    public void delete(EPedido item);
+    public List<DTOPedido> read();
+    public DTOPedido read(int id);
+    public void insert(DTOPedido item);
+    public void update(DTOPedido item);
+    public void delete(DTOPedido item);
 }

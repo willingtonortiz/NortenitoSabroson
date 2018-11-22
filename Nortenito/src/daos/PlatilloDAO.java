@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.EPlatillo;
+import dtos.DTOPlatillo;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface PlatilloDAO {
-    public List<EPlatillo> read();
-    public EPlatillo read(int id);
-    public void insert(EPlatillo item);
-    public void update(EPlatillo item);
-    public void delete(EPlatillo item);
+    public List<DTOPlatillo> read();
+    public DTOPlatillo read(int id);
+    public void insert(DTOPlatillo item);
+    public void update(DTOPlatillo item);
+    public void delete(DTOPlatillo item);
 }

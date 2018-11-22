@@ -1,11 +1,11 @@
-package entities;
+package dtos;
 
-public class EMesa {
+public class DTOMesa {
     private int idMesa;
     
-    public EMesa() { }
+    public DTOMesa() { }
 
-    public EMesa(int idMesa) {
+    public DTOMesa(int idMesa) {
         this.idMesa = idMesa;
     }
 

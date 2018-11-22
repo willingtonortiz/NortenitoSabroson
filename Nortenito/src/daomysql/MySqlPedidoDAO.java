@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package daos;
+package daomysql;
 
-import entities.ECliente;
 import connections.MySqlConnection;
+import daos.PedidoDAO;
+import dtos.DTOPedido;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,17 +19,17 @@ import java.util.List;
  *
  * @author WillingtonOrtiz
  */
-public class MySqlClienteDAO implements ClienteDAO{
-    
+public class MySqlPedidoDAO implements PedidoDAO{
+
     private Connection getConnection(){
         MySqlConnection conexion = new MySqlConnection();
         return conexion.connect();
     }
     
     @Override
-    public List<ECliente> read() {
+    public List<DTOPedido> read() {
         String sql = String.format(
-                "SELECT * FROM clientes"
+                "SELECT * FROM pedidos"
         );
         
         try{
@@ -38,20 +39,20 @@ public class MySqlClienteDAO implements ClienteDAO{
             
             ResultSet result = stm.executeQuery(sql);
         
-            List<ECliente> items = new ArrayList<ECliente>();
+            List<DTOPedido> items = new ArrayList<DTOPedido>();
             
             while(result.next()){
-                ECliente nuevo = new ECliente(
+                DTOPedido nuevo = new DTOPedido(
+                        result.getInt("idPedido"),
                         result.getInt("idCliente"),
-                        result.getString("nombre"),
-                        result.getString("apellido"),
-                        result.getString("distrito"),
-                        result.getInt("telefono")
+                        result.getInt("idMesero"),
+                        result.getInt("idMesa"),
+                        result.getDate("fecha")
                 );
                 items.add(nuevo);
             }
         
-            System.out.println("Se obtuvieron los usuarios");
+            System.out.println("Se obtuvieron los pedidos");
         
             stm.close();
             con.close();
@@ -60,7 +61,7 @@ public class MySqlClienteDAO implements ClienteDAO{
         }
         catch(SQLException e){
             
-            System.out.println("Fallo en MySqlClienteDAO -> read(ALL)");
+            System.out.println("Fallo en MySqlPedidoDAO -> read(ALL)");
             
         }
         
@@ -68,9 +69,9 @@ public class MySqlClienteDAO implements ClienteDAO{
     }
 
     @Override
-    public ECliente read(int id) {
+    public DTOPedido read(int id) {
         String sql = String.format(
-                "SELECT * FROM clientes WHERE idCliente = %d",
+                "SELECT * FROM pedidos WHERE idPedido = %d",
                 id
         );
         
@@ -81,15 +82,15 @@ public class MySqlClienteDAO implements ClienteDAO{
             
             ResultSet result = stm.executeQuery(sql);
             
-            ECliente item = new ECliente(
+            DTOPedido item = new DTOPedido(
+                    result.getInt("idPedido"),
                     result.getInt("idCliente"),
-                    result.getString("nombre"),
-                    result.getString("apellido"),
-                    result.getString("distrito"),
-                    result.getInt("telefono")
-            );
+                    result.getInt("idMesero"),
+                    result.getInt("idMesa"),
+                    result.getDate("fecha")
+                );
         
-            System.out.println("Se obtuvo al usuario");
+            System.out.println("Se obtuvo el pedido");
         
             stm.close();
             con.close();
@@ -98,7 +99,7 @@ public class MySqlClienteDAO implements ClienteDAO{
         }
         catch(SQLException e){
             
-            System.out.println("Fallo en MySqlClienteDAO -> read(ALL)");
+            System.out.println("Fallo en MySqlPedidoDAO -> read(one)");
             
         }
         
@@ -106,13 +107,13 @@ public class MySqlClienteDAO implements ClienteDAO{
     }
 
     @Override
-    public void insert(ECliente item) {
+    public void insert(DTOPedido item) {
         String query = String.format(
-                "INSERT INTO clientes(nombre, apellido, distrito, telefono) VALUES ('%s', '%s', '%s', %d)",
-                item.getNombre(),
-                item.getApellido(),
-                item.getDistrito(),
-                item.getTelefono()
+                "INSERT INTO pedidos(idCliente, idMesero, idMesa, fecha) VALUES (%d, %d, %d, '%s')",
+                item.getIdCliente(),
+                item.getIdMesero(),
+                item.getIdMesa(),
+                item.getFecha()
         );
         
         try {
@@ -122,27 +123,27 @@ public class MySqlClienteDAO implements ClienteDAO{
             
             stm.executeUpdate(query);
             
-            System.out.println("Se insertó el cliente");
+            System.out.println("Se insertó el pedido");
         
             stm.close();
             con.close();
             
         } catch (SQLException ex) {
             
-            System.out.println("Fallo en MySqlClienteDAO -> Insert");
+            System.out.println("Fallo en MySqlPedidoDAO -> Insert");
             
         }
     }
 
     @Override
-    public void update(ECliente item) {
+    public void update(DTOPedido item) {
         String query = String.format(
-                "UPDATE clientes SET nombre = '%s', apellido = '%s', distrito = '%s', telefono = %d WHERE idCliente = %d",
-                item.getNombre(),
-                item.getApellido(),
-                item.getDistrito(),
-                item.getTelefono(),
-                item.getIdCliente()
+                "UPDATE pedidos SET idCliente = %d, idMesero = %d, idMesa = %d, fecha = '%s' WHERE idPedido = %d",
+                item.getIdCliente(),
+                item.getIdMesero(),
+                item.getIdMesa(),
+                item.getFecha(),
+                item.getIdPedido()
         );
         
         try {
@@ -152,24 +153,23 @@ public class MySqlClienteDAO implements ClienteDAO{
             
             stm.executeUpdate(query);
             
-            System.out.println("Se modificó el cliente");
+            System.out.println("Se modificó el pedido");
         
             stm.close();
             con.close();
             
         } catch (SQLException ex) {
             
-            System.out.println("Fallo en MySqlClienteDAO -> update");
-            System.out.println(ex);
+            System.out.println("Fallo en MySqlPedidoDAO -> update");
             
         }
     }
 
     @Override
-    public void delete(ECliente item) {
+    public void delete(DTOPedido item) {
         String query = String.format(
-                "DELETE FROM clientes WHERE idCliente = %d",
-                item.getIdCliente()
+                "DELETE FROM pedidos WHERE idPedido = %d",
+                item.getIdPedido()
         );
         
         try {
@@ -179,14 +179,14 @@ public class MySqlClienteDAO implements ClienteDAO{
             
             stm.executeUpdate(query);
             
-            System.out.println("Se eliminó el cliente");
+            System.out.println("Se eliminó el pedido");
         
             stm.close();
             con.close();
             
         } catch (SQLException ex) {
             
-            System.out.println("Fallo en MySqlClienteDAO -> delete");
+            System.out.println("Fallo en MySqlPedidoDAO -> delete");
             
         }
     }

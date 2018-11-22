@@ -1,7 +1,7 @@
 package presentacion;
 
 import daos.ClienteDAO;
-import entities.ECliente;
+import dtos.DTOCliente;
 import factories.DAOFactory;
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Main {
         //dao.update(new ECliente(2,"Andrea", "Ortiz", "Chorrillos", 991223344));
         //dao.delete(new ECliente(3,"Andrea", "Ortiz", "Surco", 991223344));
         
-        List<ECliente> items = dao.read();
+        List<DTOCliente> items = dao.read();
         
         for(int i = 0; i < items.size(); ++i){
             System.out.println(items.get(i));

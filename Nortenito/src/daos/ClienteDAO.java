@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.ECliente;
+import dtos.DTOCliente;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface ClienteDAO {
-    public List<ECliente> read();
-    public ECliente read(int id);
-    public void insert(ECliente item);
-    public void update(ECliente item);
-    public void delete(ECliente item);
+    public List<DTOCliente> read();
+    public DTOCliente read(int id);
+    public void insert(DTOCliente item);
+    public void update(DTOCliente item);
+    public void delete(DTOCliente item);
 }

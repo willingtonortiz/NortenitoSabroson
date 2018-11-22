@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.EProveedor;
+import dtos.DTOProveedor;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface ProveedorDAO {
-    public List<EProveedor> read();
-    public EProveedor read(int id);
-    public void insert(EProveedor item);
-    public void update(EProveedor item);
-    public void delete(EProveedor item);
+    public List<DTOProveedor> read();
+    public DTOProveedor read(int id);
+    public void insert(DTOProveedor item);
+    public void update(DTOProveedor item);
+    public void delete(DTOProveedor item);
 }

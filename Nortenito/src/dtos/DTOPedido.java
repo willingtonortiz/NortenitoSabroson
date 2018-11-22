@@ -1,17 +1,17 @@
-package entities;
+package dtos;
 
 import java.util.Date;
 
-public class EPedido {
+public class DTOPedido {
     private int idPedido;
     private int idCliente;
     private int idMesero;
     private int idMesa;
     private Date fecha;
 
-    public EPedido() { }
+    public DTOPedido() { }
 
-    public EPedido(int idPedido, int idCliente, int idMesero, int idMesa, Date fecha) {
+    public DTOPedido(int idPedido, int idCliente, int idMesero, int idMesa, Date fecha) {
         this.idPedido = idPedido;
         this.idCliente = idCliente;
         this.idMesero = idMesero;

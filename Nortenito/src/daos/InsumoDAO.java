@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.EInsumo;
+import dtos.DTOInsumo;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface InsumoDAO {
-    public List<EInsumo> read();
-    public EInsumo read(int id);
-    public void insert(EInsumo item);
-    public void update(EInsumo item);
-    public void delete(EInsumo item);
+    public List<DTOInsumo> read();
+    public DTOInsumo read(int id);
+    public void insert(DTOInsumo item);
+    public void update(DTOInsumo item);
+    public void delete(DTOInsumo item);
 }

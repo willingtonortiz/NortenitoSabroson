@@ -1,13 +1,13 @@
-package entities;
+package dtos;
 
-public class EMesero {
+public class DTOMesero {
     private int idMesero;
     private String nombre;
     private String apellido;
 
-    public EMesero() { }
+    public DTOMesero() { }
 
-    public EMesero(int idMesero, String nombre, String apellido) {
+    public DTOMesero(int idMesero, String nombre, String apellido) {
         this.idMesero = idMesero;
         this.nombre = nombre;
         this.apellido = apellido;

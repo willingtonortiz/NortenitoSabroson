@@ -1,15 +1,15 @@
-package entities;
+package dtos;
 
-public class EProveedor {
+public class DTOProveedor {
     private int idProveedor;
     private String nombre;
     private String direccion;
     private String distrito;
     private int telefono;
 
-    public EProveedor() { }
+    public DTOProveedor() { }
 
-    public EProveedor(int idProveedor, String nombre, String direccion, String distrito, int telefono) {
+    public DTOProveedor(int idProveedor, String nombre, String direccion, String distrito, int telefono) {
         this.idProveedor = idProveedor;
         this.nombre = nombre;
         this.direccion = direccion;

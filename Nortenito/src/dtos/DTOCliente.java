@@ -1,6 +1,6 @@
-package entities;
+package dtos;
 
-public class ECliente {
+public class DTOCliente {
     private int idCliente;
     private String nombre;
     private String apellido;
@@ -8,9 +8,9 @@ public class ECliente {
     private int telefono;
     
     
-    public ECliente() {}
+    public DTOCliente() {}
 
-    public ECliente(int idCliente, String nombre, String apellido, String distrito, int telefono) {
+    public DTOCliente(int idCliente, String nombre, String apellido, String distrito, int telefono) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;

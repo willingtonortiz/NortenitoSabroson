@@ -5,7 +5,7 @@
  */
 package daos;
 
-import entities.EMesero;
+import dtos.DTOMesero;
 import java.util.List;
 
 /**
@@ -13,9 +13,9 @@ import java.util.List;
  * @author WillingtonOrtiz
  */
 public interface MeseroDAO {
-    public List<EMesero> read();
-    public EMesero read(int id);
-    public void insert(EMesero item);
-    public void update(EMesero item);
-    public void delete(EMesero item);
+    public List<DTOMesero> read();
+    public DTOMesero read(int id);
+    public void insert(DTOMesero item);
+    public void update(DTOMesero item);
+    public void delete(DTOMesero item);
 }

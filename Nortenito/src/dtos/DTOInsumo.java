@@ -1,15 +1,15 @@
-package entities;
+package dtos;
 
-public class EInsumo {
+public class DTOInsumo {
     private int idInsumo;
     private int idProveedor;
     private String nombre;
     private int stock;
     private float precio;
     
-    public EInsumo(){ }
+    public DTOInsumo(){ }
 
-    public EInsumo(int idInsumo, int idProveedor, String nombre, int stock, float precio) {
+    public DTOInsumo(int idInsumo, int idProveedor, String nombre, int stock, float precio) {
         this.idInsumo = idInsumo;
         this.idProveedor = idProveedor;
         this.nombre = nombre;
