@@ -17,6 +17,16 @@ public class DTOProveedor {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return String.format("DTOProveedor{ IdProveedor: %d, Nombre: %s, Direccion: %s, Distrito: %s, Telefono: %d }",
+                idProveedor,
+                nombre,
+                direccion,
+                distrito,
+                telefono);
+    }    
+
     public int getIdProveedor() {
         return idProveedor;
     }

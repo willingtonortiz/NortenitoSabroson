@@ -17,6 +17,17 @@ public class DTOInsumo {
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Insumo{ IdInsumo: %d, IdProveedor: %d, Nombre: '%s', Stock: %d, Precio: %f }",
+                idInsumo,
+                idProveedor,
+                nombre,
+                stock,
+                precio
+        );
+    }
+
     public int getIdInsumo() {
         return idInsumo;
     }

@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -108,13 +109,15 @@ public class MySqlInsumoDAO implements InsumoDAO {
 
     @Override
     public void insert(DTOInsumo item) {
-        String query = String.format(
-                "INSERT INTO insumos(idProveedor, nombre, stock, precio) VALUES (%d, '%s', %d, %f)",
+        String query = String.format(Locale.US,
+                "INSERT INTO insumos (idProveedor, nombre, stock, precio) VALUES (%d, '%s', %d, %s)",
                 item.getIdProveedor(),
                 item.getNombre(),
                 item.getStock(),
                 item.getPrecio()
         );
+        
+        System.out.println(query);
         
         try {
             Connection con = getConnection();
@@ -131,6 +134,7 @@ public class MySqlInsumoDAO implements InsumoDAO {
         } catch (SQLException ex) {
             
             System.out.println("Fallo en MySqlInsumoDAO -> Insert");
+            System.out.println(ex);
             
         }
     }
