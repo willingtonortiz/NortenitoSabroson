@@ -141,7 +141,7 @@ public class MySqlInsumoDAO implements InsumoDAO {
 
     @Override
     public void update(DTOInsumo item) {
-        String query = String.format(
+        String query = String.format(Locale.US,
                 "UPDATE insumos SET idProveedor = %d, nombre = '%s', stock = %d, precio = %f WHERE idInsumo = %d",
                 item.getIdProveedor(),
                 item.getNombre(),
